@@ -1,0 +1,16 @@
+<?php
+// PHP test of PoetryDB
+// (1) API URL 
+$api_url = 'http://poetrydb.org/author/Emily%20Bronte';
+// (2) Call the JSON file 
+$json_file = file_get_contents($api_url);
+// (3) Decode JSON file into a PHP array 
+$resource_array = json_decode($json_file);
+// (4) Loop through each record 
+foreach ($resource_array as $value){
+	// (5) Print title 
+	echo $value->title;
+	// (6) Print horizontal line
+	echo "<hr/>"; 
+} // (7) Loop end
+?>
